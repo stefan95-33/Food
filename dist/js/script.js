@@ -90,30 +90,19 @@ function getZero(num) {
 
 /* -----------------TIMER--------end-------------------------------------*/
 /* --------------------------Modal-------start--------------------------- */
-const modalTrigger = document.querySelectorAll('[data-modal]'),
+const modalTrigger = document.querySelector('[data-modal]'),
 modal = document.querySelector('.modal'),
 modalCloseBtn = document.querySelector('[data-close]');
-modalTrigger.forEach(btn => {
-btn.addEventListener('click', openModal);
-});
-function closeModal() {
-modal.classList.add('hide');
-modal.classList.remove('show');
-document.body.style.overflow = '';
-}
-function openModal() {
+
+modalTrigger.addEventListener('click', () => {
 modal.classList.add('show');
 modal.classList.remove('hide');
-document.body.style.overflow = 'hidden';
-clearInterval(modalTimerId);
-}
-
-modalCloseBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', (e) => {
-if (e.target === modal) {
-    closeModal();
-}
 });
+modalCloseBtn.addEventListener('click', () => {
+  modal.classList.add('hide');
+  modal.classList.remove('show');
+});
+
 
 /* ------------------------------Modal----end---------------------------- */
 });
