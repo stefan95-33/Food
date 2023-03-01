@@ -39,12 +39,11 @@ tabsParent.addEventListener('click', (event) => {
 const deadline = '2025-02-26';
 
 function getTimeRemaining(endtime) {
-
   const t = Date.parse(endtime) - Data.parse(new Date()),
   days = Math.floor( (t / (1000 * 60 * 60 * 24)) ),
   hours = Math.floor((t / (1000 * 60 * 60) % 24)),
-  minutes = math.floor((t / 1000 / 60) % 60),
-  seconds = math.floor((t / 1000) % 60);
+  minutes = Math.floor((t / 1000 / 60) % 60),
+  seconds = Math.floor((t / 1000) % 60);
 
   return {
     'total': t,
@@ -71,7 +70,7 @@ function getZero(num) {
       timeInterval = setInterval(updateClock, 1000);
 
       updateClock();
-      
+
       function updateClock() {
         const t = getTimeRemaining(endtime);
 
